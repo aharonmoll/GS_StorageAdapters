@@ -35,7 +35,7 @@ public class SpaceTestCase {
 
     @Before
     public void before() {
-        gigaSpace = Program.getOrCreateSpace(null);
+        gigaSpace = Program.getOrCreateSpace(null, "localhost");
     }
 
     @Test

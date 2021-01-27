@@ -27,7 +27,9 @@ public class Program {
     private static Message[] entries=null;
     private static GigaSpace gigaSpace;
     public static void main(String[] args) {
-        GigaSpace gigaSpace = getOrCreateSpace(args.length == 0 ? null : args[0]);
+        String spaceName = args.length == 0 ? null : args[0];
+        String locators = args.length == 1 ? "localhost" : args[1];
+        GigaSpace gigaSpace = getOrCreateSpace(spaceName,locators);
         System.out.println("Connected to space " + gigaSpace.getName());
 
         // Your code goes here, for example:
@@ -40,14 +42,14 @@ public class Program {
         System.exit(0);
     }
 
-    public static GigaSpace getOrCreateSpace(String spaceName) {
+    public static GigaSpace getOrCreateSpace(String spaceName, String locators) {
         if (spaceName == null) {
             System.out.println("Space name not provided - creating an embedded space...");
             return new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpace")).create();
         } else {
             System.out.printf("Connecting to space %s...%n", spaceName);
             try {
-                return new GigaSpaceConfigurer(new SpaceProxyConfigurer(spaceName).lookupLocators("localhost")).create();
+                return new GigaSpaceConfigurer(new SpaceProxyConfigurer(spaceName).lookupLocators(locators)).create();
             } catch (CannotFindSpaceException e) {
                 System.err.println("Failed to find space: " + e.getMessage());
                 throw e;
