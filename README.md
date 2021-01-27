@@ -16,7 +16,9 @@
 #### For more usages examples please review:
     com.gigaspaces.test.storage_adapter.StorageAdapterBasicTest
     
-*   The above class can be found in XAP Premium git (https://github.com/Gigaspaces/xap-premium)
+*   The above class can be found in XAP Premium git:
+
+ https://github.com/Gigaspaces/xap-premium/tree/master/xap-tests/xap-tests-datagrid/src/main/java/com/gigaspaces/test/storage_adapter
     
     
 
