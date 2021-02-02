@@ -11,7 +11,7 @@
 ![Screenshot](./Pictures/Picture1.png)
 
 #### Please run:
-    com.mycompany.app.Program.main()
+    com.mycompany.app.StrorageAdapters.main()
     
 #### For more usages examples please review:
     com.gigaspaces.test.storage_adapter.StorageAdapterBasicTest
@@ -20,7 +20,18 @@
 
  https://github.com/Gigaspaces/xap-premium/tree/master/xap-tests/xap-tests-datagrid/src/main/java/com/gigaspaces/test/storage_adapter
     
-    
+#### To execute on Linux aws machine
+* Put runStorageAdapters.sh & GS_StorageAdapters-0.1.jar in CSM home dir (/home/ec2-user)
+* Update all relevant parameters to fit your environment.<br>
+**Note:**<br>
+Current runStorageAdapters.sh sports SSL communication if not needed please remove SSL unnecessary parameters.
+*   `./runStorageAdapters.sh`
+* Output should be something like:
+
+![Screenshot](./Pictures/Picture2.png)
+
+
+ 
 
 
 

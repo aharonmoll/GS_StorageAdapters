@@ -22,7 +22,7 @@ import org.openspaces.core.space.*;
 
 import java.util.function.Supplier;
 
-public class Program {
+public class StrorageAdapters {
     private static Supplier<Message> messageFactory=initMessageFactory("pojo");
     private static Message[] entries=null;
     private static GigaSpace gigaSpace;
