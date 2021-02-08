@@ -27,8 +27,11 @@ public class StrorageAdapters {
     private static Message[] entries=null;
     private static GigaSpace gigaSpace;
     public static void main(String[] args) {
-        String spaceName = args.length == 0 ? null : args[0];
-        String locators = args.length == 1 ? "localhost" : args[1];
+        String spaceName = null;
+        String locators = "localhost";
+        if (args.length==2) {spaceName=args[0];locators = args[1];}
+        else if (args.length==1) spaceName = args[0];
+
         GigaSpace gigaSpace = getOrCreateSpace(spaceName,locators);
         System.out.println("Connected to space " + gigaSpace.getName());
 
